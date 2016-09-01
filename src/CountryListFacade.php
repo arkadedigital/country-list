@@ -14,7 +14,7 @@
  * @link        http://monarobase.net
  */
 
-namespace Monarobase\CountryList;
+namespace Arkadedigital\CountryList;
 
 use Illuminate\Support\Facades\Facade;
 
@@ -22,14 +22,14 @@ use Illuminate\Support\Facades\Facade;
  * CountryListFacade
  *
  * @author Monarobase <jonathan@monarobase.net>
- */ 
+ */
 class CountryListFacade extends Facade {
- 
+
     /**
      * Get the registered name of the component.
      *
      * @return string
      */
     protected static function getFacadeAccessor() { return 'countrylist'; }
- 
+
 }

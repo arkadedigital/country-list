@@ -14,7 +14,7 @@
  * @link        http://monarobase.net
  */
 
-namespace Monarobase\CountryList;
+namespace Arkadedigital\CountryList;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -22,7 +22,7 @@ use Illuminate\Support\ServiceProvider;
  * CountryListServiceProvider
  *
  * @author Monarobase <jonathan@monarobase.net>
- */ 
+ */
 class CountryListServiceProvider extends ServiceProvider {
 
 	/**

@@ -1,4 +1,6 @@
-<?php namespace Monarobase\CountryList;
+<?php
+
+namespace Arkadedigital\CountryList;
 
 /*
  * This file is part of Monarobase-CountryList
@@ -178,7 +180,7 @@ class CountryList {
 
 	/**
 	 * Indicates whether or not a given $countryCode matches a country.
-	 * 
+	 *
 	 * @param string $countryCode  A 2-letter country code
 	 * @param string $locale       The locale (default: en)
 	 * @param string $source       Data source: "icu" or "cldr"
