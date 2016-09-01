@@ -40,9 +40,11 @@ class CountryListServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app['countrylist'] = $this->app->share(function ($app) {
+        $this->app->singleton(CountryList::class, function($app) {
             return new CountryList;
         });
+
+        $this->app->alias(CountryList::class, 'countrylist');
     }
 
     /**
