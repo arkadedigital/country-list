@@ -22,7 +22,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Arkadedigital\\CountryList": "src/"
+            "Arkadedigital\\CountryList\\": "src/"
         }
     }
 }
