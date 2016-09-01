@@ -40,24 +40,45 @@ $app->register(Arkadedigital\CountryList\CountryListServiceProvider::class);
 ## Usage
 
 - Locale (en, en_US, fr, fr_CA...)
-- Format (csv, flags.html, html, json, mysql.sql, php, postgresql.sql, sqlite.sql, sqlserver.sql, txt, xml, yaml)
-- Data source (icu, cldr)
+- Format (csv, html, json, mysql.sql, php, postgresql.sql, sqlite.sql, txt, xliff, xml, yaml)
 
-Get all countries
+Get all countries in English as JSON
 
 ```php
 Route::get('/', function() {
-    return Countries::getList('en', 'json', 'cldr');
+    return Countries::getList('en', 'json');
 });
 ```
 
-
-Get one country
+Get the name of Russia in English
 
 ```php
 Route::get('/', function() {
-    return Countries::getOne('RU', 'en', 'cldr');
+    return Countries::getOne('RU', 'en');
 });
+```
+
+### Dependency Injection
+
+You can choose to use dependency injection if you are using Lumen or if you prefer them to Laravel's facades.
+
+```php
+use Arkadedigital\CountryList\CountryList;
+
+class Controller extends BaseController
+{
+    protected $countryList;
+
+    public function __construct(CountryList $countryList)
+    {
+        $this->countryList = $countryList;
+    }
+
+    public function index()
+    {
+        return $this->countryList->getList('en', 'csv');
+    }
+}
 ```
 
 ## Credit
