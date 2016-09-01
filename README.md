@@ -1,28 +1,41 @@
 # Country List
 
-Country List is a package for Laravel 4 which lists all countries with names and ISO 3166-1 codes in all languages and data formats.
+Country List is a package for Laravel and Lumen which lists all countries with names and ISO 3166-1 codes in all languages and data formats.
 
 
 ## Installation
 
-Add `monarobase/country-list` to `composer.json`.
+Add `arkadedigital/country-list` to your Laravel or Lumen project using [Composer](https://getcomposer.org).
 
-    "monarobase/country-list": "dev-master"
-    
-Run `composer update` to pull down the latest version of Country List.
+```sh
+composer require arkadedigital/country-list
+```
 
-Now open up `app/config/app.php` and add the service provider to your `providers` array.
+### Laravel
 
-    'providers' => array(
-        'Monarobase\CountryList\CountryListServiceProvider',
-    )
+Open up `app/config/app.php` and add the service provider to your `providers` array.
 
-Now add the alias.
+```php
+'providers' => [
+    Arkadedigital\CountryList\CountryListServiceProvider::class,
+]
+```
 
-    'aliases' => array(
-        'Countries' => 'Monarobase\CountryList\CountryListFacade',
-    )
+Finally, add the alias.
 
+```php
+'aliases' => [
+    'Countries' => Arkadedigital\CountryList\CountryListFacade::class,
+]
+```
+
+### Lumen
+
+Open up `bootstrap/app.php` and add the service provider to the file.
+
+```php
+$app->register(Arkadedigital\CountryList\CountryListServiceProvider::class);
+```
 
 ## Usage
 
@@ -32,18 +45,20 @@ Now add the alias.
 
 Get all countries
 
-	Route::get('/', function()
-	{
-		return Countries::getList('en', 'json', 'cldr');
-	});
+```php
+Route::get('/', function() {
+    return Countries::getList('en', 'json', 'cldr');
+});
+```
 
 
 Get one country
 
-	Route::get('/', function()
-	{
-		return Countries::getOne('RU', 'en', 'cldr');
-	});
+```php
+Route::get('/', function() {
+    return Countries::getOne('RU', 'en', 'cldr');
+});
+```
 
 ## Credit
 
