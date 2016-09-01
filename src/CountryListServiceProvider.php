@@ -54,6 +54,6 @@ class CountryListServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return array('countrylist');
+        return ['countrylist'];
     }
 }
