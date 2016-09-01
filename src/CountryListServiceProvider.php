@@ -23,36 +23,35 @@ use Illuminate\Support\ServiceProvider;
  *
  * @author Monarobase <jonathan@monarobase.net>
  */
-class CountryListServiceProvider extends ServiceProvider {
+class CountryListServiceProvider extends ServiceProvider
+{
 
-	/**
-	 * Indicates if loading of the provider is deferred.
-	 *
-	 * @var bool
-	 */
-	protected $defer = false;
+    /**
+     * Indicates if loading of the provider is deferred.
+     *
+     * @var bool
+     */
+    protected $defer = false;
 
-	/**
-	 * Register the service provider.
-	 *
-	 * @return void
-	 */
-	public function register()
-	{
-		$this->app['countrylist'] = $this->app->share(function($app)
-		{
-			return new CountryList;
-		});
-	}
+    /**
+     * Register the service provider.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        $this->app['countrylist'] = $this->app->share(function ($app) {
+            return new CountryList;
+        });
+    }
 
-	/**
-	 * Get the services provided by the provider.
-	 *
-	 * @return array
-	 */
-	public function provides()
-	{
-		return array('countrylist');
-	}
-
+    /**
+     * Get the services provided by the provider.
+     *
+     * @return array
+     */
+    public function provides()
+    {
+        return array('countrylist');
+    }
 }
