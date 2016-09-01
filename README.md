@@ -44,3 +44,7 @@ Get one country
 	{
 		return Countries::getOne('RU', 'en', 'cldr');
 	});
+
+## Credit
+
+This project is a fork of Monarobase's [Country List](https://github.com/Monarobase/country-list) project.
