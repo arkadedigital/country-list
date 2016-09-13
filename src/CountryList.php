@@ -44,8 +44,7 @@ class CountryList
     public function __construct($dataDir = null)
     {
         if (!isset($dataDir)) {
-            $r = new \ReflectionClass('Umpirsky\Country\Builder\Builder');
-            $dataDir = sprintf('%s/../../../../country', dirname($r->getFileName()));
+            $dataDir = base_path('vendor/umpirsky/country-list/data');
         }
 
         if (!is_dir($dataDir)) {
