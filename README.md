@@ -81,6 +81,10 @@ class Controller extends BaseController
 }
 ```
 
+## Support
+
+Feel free to [create a GitHub issue](https://github.com/arkadedigital/country-list/issues/new) or [send us an email](mailto:support@arkade.com.au) for support regarding this Laravel package.
+
 ## Credit
 
 This project is a fork of Monarobase's [Country List](https://github.com/Monarobase/country-list) project.
